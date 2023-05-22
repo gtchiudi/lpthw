@@ -5,15 +5,17 @@ from flask import request
 app = Flask(__name__)
 
 
-@app.route('/hello')
+@app.route("/hello", methods=['POST', 'GET'])
 def index():
-    name = request.args.get('name', 'Nobody')
-    if name:
-        greeting = f"Hello, {name}"
-    else:
-        greeting = "Hello World"
+    greeting = "Hello World"
 
-    return render_template("index.html", greeting=greeting)
+    if request.method == "POST":
+        name = request.form['name']
+        greet = request.form['greet']
+        greeting = f"{greet}, {name}"
+        return render_template("index.html", greeting=greeting)
+    else:
+        return render_template("hello_form.html")
 
 
 if __name__ == "__main__":
