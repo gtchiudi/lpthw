@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Candor Scheduling</title>
-		<meta name="Description" content="Scheduling pickup and dropoff with Candor Transportation.">
-		<meta charset="utf-8">
-		<meta name="robots" content="index,follow">
-		<link rel="icon" href="/gothonweb/docs/calendar_android_system_blue_smartphone_icon_252260.png">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Gothons of Planet Percal #25</title>
 	</head>
 	<body>
-		<h1>Candor Scheduling</h1>
-		<a target="_blank" href="https://www.candortransport.com/home">
-			CandorTransport.com
-		</a>
+		% if greeting %
+			I just wanted to say
+			<em style="color: green; font-size: 2em;">{{ greeting }}</em>
+		% else %
+			<em>Hello</em>, world!
+		% endif %
+
 	</body>
 </html>
